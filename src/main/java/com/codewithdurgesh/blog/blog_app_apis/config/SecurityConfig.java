@@ -7,7 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -23,9 +23,19 @@ import com.codewithdurgesh.blog.blog_app_apis.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
+	public static final String[] PUBLIC_URLS = {
+            "/api/v1/auth/**",
+            "/v3/api-docs/**",
+            "/v2/api-docs",
+            "/swagger-resources/**",
+            "/swagger-ui/**",
+            "/webjars/**"
+            
+    };
+	
 	@Autowired
 	private CustomUserDetailService customUserDetailService;
 	
@@ -41,8 +51,8 @@ public class SecurityConfig {
 			.csrf(csrf -> csrf.disable())
 			.cors(cors -> cors.disable())
 			.authorizeHttpRequests(auth -> 
-					auth.requestMatchers("/api/v1/auth/**").permitAll()
-//						.requestMatchers(HttpMethod.GET).permitAll()
+					auth.requestMatchers(PUBLIC_URLS).permitAll()
+						.requestMatchers(HttpMethod.GET).permitAll()
 							     .anyRequest().authenticated())
 			.exceptionHandling(ex -> ex.authenticationEntryPoint(point))
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

@@ -14,7 +14,11 @@ import com.codewithdurgesh.blog.blog_app_apis.config.AppConstants;
 import com.codewithdurgesh.blog.blog_app_apis.entities.Role;
 import com.codewithdurgesh.blog.blog_app_apis.repositories.RolesRepo;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
+@OpenAPIDefinition(info=@Info(title="Blog App: Backend",version = "1.0", description = "Blog App Apis"))
 public class BlogAppApisApplication implements CommandLineRunner{
 
 	@Autowired
