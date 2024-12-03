@@ -10,8 +10,6 @@ import com.codewithdurgesh.blog.blog_app_apis.entities.User;
 import com.codewithdurgesh.blog.blog_app_apis.exception.ResourceNotFoundException;
 import com.codewithdurgesh.blog.blog_app_apis.repositories.UserRepo;
 
-import jakarta.websocket.server.ServerEndpoint;
-
 @Service
 public class CustomUserDetailService implements UserDetailsService{
 

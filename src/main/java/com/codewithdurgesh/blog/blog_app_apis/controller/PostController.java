@@ -5,10 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -106,7 +104,7 @@ public class PostController {
 		return new ResponseEntity<List<PostDto>>(postDto, HttpStatus.OK);
 	}
 	
-	//Post Image Upload
+	// Post Image Upload
 	
 	@PostMapping("/post/image/upload/{postId}")
 	public ResponseEntity<PostDto> uploadImage (

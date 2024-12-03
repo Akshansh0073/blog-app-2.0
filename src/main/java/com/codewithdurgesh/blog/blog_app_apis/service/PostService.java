@@ -2,8 +2,6 @@ package com.codewithdurgesh.blog.blog_app_apis.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.codewithdurgesh.blog.blog_app_apis.payload.PostDto;
 import com.codewithdurgesh.blog.blog_app_apis.payload.PostResponse;
 

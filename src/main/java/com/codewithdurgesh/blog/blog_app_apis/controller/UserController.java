@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PutExchange;
 
 import com.codewithdurgesh.blog.blog_app_apis.payload.ApiResponse;
 import com.codewithdurgesh.blog.blog_app_apis.payload.UserDto;

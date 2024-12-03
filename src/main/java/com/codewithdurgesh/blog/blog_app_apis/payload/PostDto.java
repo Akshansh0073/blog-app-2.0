@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.codewithdurgesh.blog.blog_app_apis.entities.Comment;
-
 public class PostDto {
 
 	private Integer postId;
